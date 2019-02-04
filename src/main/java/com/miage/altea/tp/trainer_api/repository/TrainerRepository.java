@@ -13,5 +13,5 @@ public interface TrainerRepository extends CrudRepository<Trainer,String> {
     List<Trainer> findAll();
     Trainer save(Trainer trainer);
     Optional<Trainer> findById(String name);
-
+    void deleteByName(String name);
 }

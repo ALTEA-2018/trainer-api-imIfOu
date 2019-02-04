@@ -5,6 +5,8 @@ import com.miage.altea.tp.trainer_api.repository.TrainerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
 @Service
 public class TrainerServiceImpl implements TrainerService {
 
@@ -25,9 +27,16 @@ public class TrainerServiceImpl implements TrainerService {
         return this.trainerRepository.findById(name).orElse(null);
     }
 
+    @Transactional
     @Override
     public Trainer createTrainer(Trainer trainer) {
         return this.trainerRepository.save(trainer);
+    }
+
+    @Transactional
+    @Override
+    public void deleteTrainer(String name) {
+        this.trainerRepository.deleteByName(name);
     }
 }
 

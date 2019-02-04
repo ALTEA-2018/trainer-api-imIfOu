@@ -1,5 +1,7 @@
 package com.miage.altea.tp.trainer_api.bo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,6 +12,7 @@ public class Trainer {
     private String name;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonProperty(value = "pokemons")
     private List<Pokemon> team;
 
     public Trainer() {

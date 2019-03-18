@@ -15,6 +15,8 @@ public class Trainer {
     @JsonProperty(value = "pokemons")
     private List<Pokemon> team;
 
+    private String urlIcon;
+
     public Trainer() {
     }
 
@@ -37,5 +39,11 @@ public class Trainer {
 
     public void setTeam(List<Pokemon> team) {
         this.team = team;
+    }
+
+    public String getUrlIcon() { return urlIcon; }
+
+    public void setUrlIcon(String urlIcon) {
+        this.urlIcon = urlIcon;
     }
 }

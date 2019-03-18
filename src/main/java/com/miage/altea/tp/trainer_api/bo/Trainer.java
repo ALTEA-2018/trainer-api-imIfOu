@@ -11,6 +11,9 @@ public class Trainer {
     @Id
     private String name;
 
+    @Column
+    private String password;
+
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonProperty(value = "pokemons")
     private List<Pokemon> team;
@@ -46,4 +49,8 @@ public class Trainer {
     public void setUrlIcon(String urlIcon) {
         this.urlIcon = urlIcon;
     }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
 }

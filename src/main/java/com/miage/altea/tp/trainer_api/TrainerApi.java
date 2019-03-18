@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.List;
 
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
+@SpringBootApplication
 public class TrainerApi {
 
     public static void main(String... args){
